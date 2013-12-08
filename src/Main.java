@@ -19,7 +19,8 @@ public class Main {
         // voor input van socket
         BufferedReader sibr = null;
 
-        Socket s;
+
+        Socket s = null;
         try {
             s = new Socket(HOST, TCP_PORT);
             sosw = new OutputStreamWriter(s.getOutputStream());
@@ -28,19 +29,27 @@ public class Main {
             e.printStackTrace();
         }
 
-        String name = null;
+
+        String line = null;
         try {
             // read welcome message
             System.out.println(sibr.readLine());
 
             // read user input
-            while((name = ibr.readLine()) != null) {
-                sosw.write(name + '\n');
+            for (System.out.print('>'); (line = ibr.readLine()) != null && !line.equals("null"); System.out.print('>'))
+            {
+                // stuur bericht naar server
+                sosw.write(line + '\n');
                 sosw.flush();
+
+                // lees response van server
+                System.out.println(sibr.readLine());
             }
             sosw.close();
         } catch (IOException ioe) {
             System.out.println("IO error with stdin");
         }
+
+        System.out.println("Client closed");
     }
 }
