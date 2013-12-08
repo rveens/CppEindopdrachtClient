@@ -12,26 +12,35 @@ public class Main {
     public static void main(String[] args) {
         // voor input van stdin
         BufferedReader ibr = new BufferedReader(new InputStreamReader(System.in));
+
         // voor output naar socket
-        OutputStreamWriter sos = null;
+        OutputStreamWriter sosw = null;
+
+        // voor input van socket
+        BufferedReader sibr = null;
 
         Socket s;
         try {
             s = new Socket(HOST, TCP_PORT);
-            sos = new OutputStreamWriter(s.getOutputStream());
+            sosw = new OutputStreamWriter(s.getOutputStream());
+            sibr = new BufferedReader(new InputStreamReader(s.getInputStream()));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         String name = null;
         try {
+            // read welcome message
+            System.out.println(sibr.readLine());
+
+            // read user input
             while((name = ibr.readLine()) != null) {
-                sos.write(name + '\n');
-                sos.flush();
+                sosw.write(name + '\n');
+                sosw.flush();
             }
-            sos.close();
+            sosw.close();
         } catch (IOException ioe) {
-            System.err.println("IO error with stdin");
+            System.out.println("IO error with stdin");
         }
     }
 }
