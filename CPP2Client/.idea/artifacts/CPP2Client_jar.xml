@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="CPP2Client:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CPP2Client_jar</output-path>
+    <root id="archive" name="CPP2Client.jar">
+      <element id="module-output" name="CPP2Client" />
+    </root>
+  </artifact>
+</component>
