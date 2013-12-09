@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.Socket;
+import java.util.HashMap;
 
 /**
  * Created by Rick Veens on 12/8/13.
@@ -10,6 +11,12 @@ public class Main {
     static final String HOST = "localhost";
 
     public static void main(String[] args) {
+        int[] versionNr = { 1, 0 };
+        HashMap<String, String> hm = new HashMap<String, String>();
+        hm.put("Banaan", "banaannaam");
+        RequestHeaderGenerator rhg = new RequestHeaderGenerator("SUPERSECRETPROTOL", versionNr);
+        String generatedHeader = rhg.GenerateRequestHeader("INFO", hm);
+
         // voor input van stdin
         BufferedReader ibr = new BufferedReader(new InputStreamReader(System.in));
 
