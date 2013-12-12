@@ -39,33 +39,40 @@ public class SuperSecretClient {
 
         String line = null;
         try {
-            // read user input
+            // read commands from input
             while ((line = getCommand(ibr)) != null) {
                 String[] words = line.split(" ");
 
-                /* stuur bericht naar server */
-                // maak een header
-                HashMap<String, String> hm = new HashMap<String, String>();
+                HashMap<String, String> attributeMap = new HashMap<String, String>();
 
-                // voeg attributes toe over het bestand, als we een tweede argument hebben.
+                File file = null;
+
+                // voeg attributes toe over het bestand
                 if (words.length > 1) { // Hebben we een bestand als tweede argument?
-                    File file = new File(words[1]);
-                    hm.put("file_location", file.getPath());
-                    hm.put("length", Long.toString(file.length()));
+                    file = new File(words[1]);
+                    attributeMap.put("file_location", file.getPath());
+                    attributeMap.put("length", Long.toString(file.length()));
                 } else
-                    hm.put("length", Integer.toString(0));
+                    attributeMap.put("length", Integer.toString(0));
 
-                String header = rhg.GenerateRequestHeader(words[0], hm);
+                // genereer de header.
+                String header = rhg.GenerateRequestHeader(words[0], attributeMap);
 
-                // stuur de header + het bestand
-                byte[] buffer = new byte[1337]; // buffer
+                // stuur de header
+                sos.write(header.getBytes());
 
-                // TODO header maken en sturen + bestand
-//                sos.write(line + '\n');
-//                sos.flush();
+                // stuur bestand (als die er is)
+                if (file != null) {
+                    FileInputStream fis = new FileInputStream(file); // voor het lezen uit het bestand
+                    byte[] buffer = new byte[1337]; // buffer
 
-                // lees response van server
-                System.out.println(sibr.readLine());
+                    while (fis.read(buffer) != -1)
+                        sos.write(buffer);
+                }
+
+                // flush aanroepen?
+                // TODO lees response van server
+
                 sos.close();
             }
         } catch (IOException ioe) {
