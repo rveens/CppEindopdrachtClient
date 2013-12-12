@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -14,11 +15,11 @@ public class RequestHeaderGenerator {
     }
 
     public String GenerateRequestHeader(String command, HashMap<String, String> attributesMap) {
-        String firstline, attributeLines;
-        firstline = attributeLines = "";
+        String firstLine, attributeLines;
+        firstLine = attributeLines = "";
 
         // create first line of the SUPERSECRETPROTOCOL
-        firstline        =      protocolString +
+        firstLine        =      protocolString +
                                 '-'            +
                                 version[0]     +
                                 '.'            +
@@ -34,6 +35,6 @@ public class RequestHeaderGenerator {
                 attributeLines += s + ": " + attributesMap.get(s) + '\n';
         }
 
-        return firstline + attributeLines;
+        return firstLine + attributeLines + '\n';
     }
 }
