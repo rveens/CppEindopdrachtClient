@@ -9,7 +9,7 @@ public class SuperSecretClient {
 
     private Socket s;                   // socket
     private OutputStream sos;           // voor output naar socket
-    private BufferedReader sibr;        // voor input van socket
+    private InputStream sis;      // voor input van socket
     private RequestHeaderGenerator rhg; // Maakt een header voor ons
 
     public SuperSecretClient() {
@@ -23,14 +23,14 @@ public class SuperSecretClient {
         try {
             s = new Socket(Constants.HOST, Constants.TCP_PORT);
             sos = s.getOutputStream();
-            sibr = new BufferedReader(new InputStreamReader(s.getInputStream()));
+            sis = s.getInputStream();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         ReadUserInput();
 
-        System.out.println("Client closed");
+        printMessage("Client closed");
     }
 
     private void ReadUserInput() {
@@ -72,11 +72,17 @@ public class SuperSecretClient {
 
                 // flush aanroepen?
                 // TODO lees response van server
+                ResponseParser rs = new ResponseParser();
+                rs.ReadResponse(sis);
+                if (rs.GetInErrorState())
+                    printMessage("ERROR: response invalid"); // response is niet goed.
+                else
+                    ; // TODO send client-response if needed
 
                 sos.close();
             }
         } catch (IOException ioe) {
-            System.out.println("IO error with stdin");
+            printMessage("IO error with stdin");
         }
     }
 
@@ -85,5 +91,9 @@ public class SuperSecretClient {
             System.out.print('>');
 
         return inputReader.readLine();
+    }
+
+    private void printMessage(String mes) {
+        System.out.println(mes);
     }
 }
