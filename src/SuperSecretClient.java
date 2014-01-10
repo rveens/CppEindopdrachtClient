@@ -69,8 +69,9 @@ public class SuperSecretClient {
                     while (fis.read(buffer) != -1)
                         sos.write(buffer);
                 }
-
                 // flush aanroepen?
+                sos.flush();
+
                 // TODO lees response van server
                 ResponseParser rs = new ResponseParser();
                 rs.ReadResponse(sis);

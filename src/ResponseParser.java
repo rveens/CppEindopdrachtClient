@@ -33,8 +33,8 @@ public class ResponseParser {
 
         // read and put attribute-lines into an arrayList.
         ArrayList<String> tempList = new ArrayList<String>();
-        String line;
-        while (! (line = br.readLine()).equals(""))
+        String line = null;
+        while ( (line = br.readLine()) != null && (!line.equals("")) )
             tempList.add(line);
 
         // pass String-array to checkAttributes
@@ -56,6 +56,10 @@ public class ResponseParser {
 
 
     private boolean checkFirstLine(String firstLine) {
+        /* check for nullpointer */
+        if (firstLine == null)
+            return false;
+
         String[] words = firstLine.split(" ");
 
         if (words.length == 0)
