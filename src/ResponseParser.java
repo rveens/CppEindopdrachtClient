@@ -15,6 +15,7 @@ public class ResponseParser {
 
     private final String[] possibleAttributes = {
         "error_mesg",
+        "info_mesg",
         "length",
         "file_location",
     };

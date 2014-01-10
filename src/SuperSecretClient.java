@@ -9,38 +9,49 @@ public class SuperSecretClient {
 
     private Socket s;                   // socket
     private OutputStream sos;           // voor output naar socket
-    private InputStream sis;      // voor input van socket
+    private InputStream sis;            // voor input van socket
     private RequestHeaderGenerator rhg; // Maakt een header voor ons
+    private BufferedReader uir;         // Voor het lezen van gebruiker input
 
     public SuperSecretClient() {
         int[] versionNr = { 1, 0 };
         rhg = new RequestHeaderGenerator("SUPERSECRETPROTOL", versionNr);
+
+        uir = new BufferedReader(new InputStreamReader(System.in));
     }
 
     public void StartClient() {
 
-        /* Create a socket */
-        try {
-            s = new Socket(Constants.HOST, Constants.TCP_PORT);
-            sos = s.getOutputStream();
-            sis = s.getInputStream();
-        } catch (IOException e) {
-            e.printStackTrace();
+        while (true) {
+            try {
+                printMessage("Server adres: ");
+                String host = getInput();
+                printMessage("Server port: ");
+                String temp = getInput();
+                int port = Integer.parseInt(temp);
+
+                //Create socket
+                s = new Socket(host, port);
+                sos = s.getOutputStream();
+                sis = s.getInputStream();
+
+                //Handle this socket
+                Handle();
+
+                //Print close message and start all over
+                printMessage("Connection closed.");
+            } catch (IOException e) {
+                printMessage("ERROR: Server could not be found!");
+            } catch (NumberFormatException e) {
+                printMessage("ERROR: Server port must be a number!");
+            }
         }
-
-        ReadUserInput();
-
-        printMessage("Client closed");
     }
 
-    private void ReadUserInput() {
-        BufferedReader ibr;     // voor input van stdin
-        ibr = new BufferedReader(new InputStreamReader(System.in));
-
-        String line = null;
-        try {
-            // read commands from input
-            while ((line = getCommand(ibr)) != null) {
+    private void Handle() {
+        while(true) {
+            try {
+                String line = getInput();
                 String[] words = line.split(" ");
 
                 HashMap<String, String> attributeMap = new HashMap<String, String>();
@@ -61,10 +72,13 @@ public class SuperSecretClient {
                 // stuur de header
                 sos.write(header.getBytes());
 
+                if(words[0].equals("QUIT"))
+                    break;
+
                 // stuur bestand (als die er is)
                 if (file != null) {
                     FileInputStream fis = new FileInputStream(file); // voor het lezen uit het bestand
-                    byte[] buffer = new byte[1337]; // buffer
+                    byte[] buffer = new byte[Constants.BUFFER_SIZE]; // buffer
 
                     while (fis.read(buffer) != -1)
                         sos.write(buffer);
@@ -75,22 +89,22 @@ public class SuperSecretClient {
                 ResponseParser rs = new ResponseParser();
                 rs.ReadResponse(sis);
                 if (rs.GetInErrorState())
-                    printMessage("ERROR: response invalid"); // response is niet goed.
-                else
-                    ; // TODO send client-response if needed
+                    printMessage("ERROR: Received invallid response from server."); // response is niet goed.
 
-                sos.close();
+                HashMap<String, String> response = rs.GetAttributes();
+                printMessage(response.get("info_mesg"));
+
+            } catch (IOException ioe) {
+                printMessage("ERROR: Input error");
             }
-        } catch (IOException ioe) {
-            printMessage("IO error with stdin");
         }
     }
 
-    private String getCommand(BufferedReader inputReader) throws IOException {
-        if (inputReader != null)
+    private String getInput() throws IOException {
+        if (uir != null)
             System.out.print('>');
 
-        return inputReader.readLine();
+        return uir.readLine();
     }
 
     private void printMessage(String mes) {
