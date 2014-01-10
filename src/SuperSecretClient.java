@@ -70,7 +70,6 @@ public class SuperSecretClient {
                         sos.write(buffer);
                 }
                 // flush aanroepen?
-                sos.flush();
 
                 // TODO lees response van server
                 ResponseParser rs = new ResponseParser();

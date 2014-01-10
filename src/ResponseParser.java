@@ -29,7 +29,7 @@ public class ResponseParser {
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
         // read first line
-        this.inErrorState = checkFirstLine(br.readLine());
+        this.inErrorState = !checkFirstLine(br.readLine());
 
         // read and put attribute-lines into an arrayList.
         ArrayList<String> tempList = new ArrayList<String>();
