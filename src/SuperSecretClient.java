@@ -12,6 +12,7 @@ public class SuperSecretClient {
     private InputStream sis;            // voor input van socket
     private RequestHeaderGenerator rhg; // Maakt een header voor ons
     private BufferedReader uir;         // Voor het lezen van gebruiker input
+    private File dlLocation;
 
     public SuperSecretClient() {
         int[] versionNr = { 1, 0 };
@@ -29,6 +30,12 @@ public class SuperSecretClient {
                 printMessage("Server port: ");
                 String temp = getInput();
                 int port = Integer.parseInt(temp);
+                printMessage("Client Download map: ");
+                String dlLocationString = getInput();
+                dlLocation = new File(dlLocationString);
+
+                if (!dlLocation.exists() || !dlLocation.isDirectory())
+                    throw new FileNotFoundException();
 
                 //Create socket
                 s = new Socket(host, port);
@@ -40,6 +47,8 @@ public class SuperSecretClient {
 
                 //Print close message and start all over
                 printMessage("Connection closed.");
+            } catch (FileNotFoundException fnfe) {
+                printMessage("ERROR: Download map could not be found!");
             } catch (IOException e) {
                 printMessage("ERROR: Server could not be found!");
             } catch (NumberFormatException e) {
@@ -59,9 +68,12 @@ public class SuperSecretClient {
                 File file = null;
 
                 // voeg attributes toe over het bestand
-                if (words.length > 1) { // Hebben we een bestand als tweede argument?
-                    file = new File(words[1]);
-                    attributeMap.put("file_location", file.getPath());
+                if (words.length > 1 &&               // Hebben we een bestand als tweede argument?
+                        words[0].equals("PUT")) {
+                    file = new File(dlLocation, (words[1]));
+                    if (!file.exists() || !file.isFile())
+                        throw new FileNotFoundException();
+                    attributeMap.put("file_location", dlLocation.toURI().relativize(file.toURI()).getPath());
                     attributeMap.put("length", Long.toString(file.length()));
                 } else
                     attributeMap.put("length", Integer.toString(0));
@@ -93,7 +105,8 @@ public class SuperSecretClient {
 
                 HashMap<String, String> response = rs.GetAttributes();
                 printMessage(response.get("info_mesg"));
-
+            } catch (FileNotFoundException fnfe) {
+                printMessage("ERROR: File could not be found!");
             } catch (IOException ioe) {
                 printMessage("ERROR: Input error");
             }
