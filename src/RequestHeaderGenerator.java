@@ -6,35 +6,25 @@ import java.util.Set;
  * Created by Rick Veens on 12/9/13.
  */
 public class RequestHeaderGenerator {
-    private String protocolString;
-    private int[] version;
 
-    public RequestHeaderGenerator(String protocolString, int version[]) {
-        this.protocolString = protocolString;
-        this.version = version;
+    public RequestHeaderGenerator() {
     }
 
-    public String GenerateRequestHeader(String command, HashMap<String, String> attributesMap) {
-        String firstLine, attributeLines;
-        firstLine = attributeLines = "";
+    public String GenerateRequestHeader(HashMap<String, String> requestArgs) {
+        String response;
 
         // create first line of the SUPERSECRETPROTOCOL
-        firstLine        =      protocolString +
-                                '-'            +
-                                version[0]     +
-                                '.'            +
-                                version[1]     +
-                                ' '            +
-                                command        +
-                                '\n';
+        response = Constants.PROTOCOL + ' ' + requestArgs.get("command") + '\n';
 
         // create a string with attribute fields
-        if (attributesMap != null) {
-            Set<String> keys = attributesMap.keySet();
+        if (requestArgs != null) {
+            Set<String> keys = requestArgs.keySet();
             for( String s : keys)
-                attributeLines += s + ": " + attributesMap.get(s) + '\n';
+                if(!s.equals("command"))
+                    response += s + ": " + requestArgs.get(s) + '\n';
         }
+        response += "\n";
 
-        return firstLine + attributeLines + '\n';
+        return response;
     }
 }

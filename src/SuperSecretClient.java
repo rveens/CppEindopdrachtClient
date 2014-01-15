@@ -10,13 +10,16 @@ public class SuperSecretClient {
     private Socket s;                   // socket
     private OutputStream sos;           // voor output naar socket
     private InputStream sis;            // voor input van socket
+
     private RequestHeaderGenerator rhg; // Maakt een header voor ons
+    private CommandHandler ch;
+    private FileHandler fh;
+
     private BufferedReader uir;         // Voor het lezen van gebruiker input
-    private File dlLocation;
 
     public SuperSecretClient() {
-        int[] versionNr = { 1, 0 };
-        rhg = new RequestHeaderGenerator("SUPERSECRETPROTOL", versionNr);
+        ch = new CommandHandler();
+        fh = new FileHandler();
 
         uir = new BufferedReader(new InputStreamReader(System.in));
     }
@@ -30,12 +33,6 @@ public class SuperSecretClient {
                 printMessage("Server port: ");
                 String temp = getInput();
                 int port = Integer.parseInt(temp);
-                printMessage("Client Download map: ");
-                String dlLocationString = getInput();
-                dlLocation = new File(dlLocationString);
-
-                if (!dlLocation.exists() || !dlLocation.isDirectory())
-                    throw new FileNotFoundException();
 
                 //Create socket
                 s = new Socket(host, port);
@@ -47,12 +44,12 @@ public class SuperSecretClient {
 
                 //Print close message and start all over
                 printMessage("Connection closed.");
-            } catch (FileNotFoundException fnfe) {
-                printMessage("ERROR: Download map could not be found!");
             } catch (IOException e) {
                 printMessage("ERROR: Server could not be found!");
             } catch (NumberFormatException e) {
                 printMessage("ERROR: Server port must be a number!");
+            } catch (ClientException e) {
+                printMessage(e.what());
             }
         }
     }
@@ -60,64 +57,28 @@ public class SuperSecretClient {
     private void Handle() {
         while(true) {
             try {
-                String line = getInput();
-                String[] words = line.split(" ");
+                String inputLine = getInput();
 
-                HashMap<String, String> attributeMap = new HashMap<String, String>();
+                String command = ch.HandleCommand(inputLine, sos);
 
-                File file = null;
-
-                // voeg attributes toe over het bestand
-                if (words.length > 1 &&               // Hebben we een bestand als tweede argument?
-                        words[0].equals("PUT")) {
-                    file = new File(dlLocation, (words[1]));
-                    if (!file.exists() || !file.isFile())
-                        throw new FileNotFoundException();
-                    attributeMap.put("file_location", dlLocation.toURI().relativize(file.toURI()).getPath());
-                    attributeMap.put("length", Long.toString(file.length()));
-                } else
-                    attributeMap.put("length", Integer.toString(0));
-
-                // genereer de header.
-                String header = rhg.GenerateRequestHeader(words[0], attributeMap);
-
-                // stuur de header
-                sos.write(header.getBytes());
-
-                if(words[0].equals("QUIT"))
-                    break;
-
-                // stuur bestand (als die er is)
-                if (file != null) {
-                    FileInputStream fis = new FileInputStream(file); // voor het lezen uit het bestand
-                    byte[] buffer = new byte[Constants.BUFFER_SIZE]; // buffer
-
-                    while (fis.read(buffer) != -1)
-                        sos.write(buffer);
-                }
-                // flush aanroepen?
-
-                // TODO lees response van server
-                ResponseParser rs = new ResponseParser();
-                rs.ReadResponse(sis);
-                if (rs.GetInErrorState())
-                    printMessage("ERROR: Received invallid response from server."); // response is niet goed.
-
-                HashMap<String, String> response = rs.GetAttributes();
-                printMessage(response.get("info_mesg"));
-            } catch (FileNotFoundException fnfe) {
-                printMessage("ERROR: File could not be found!");
-            } catch (IOException ioe) {
-                printMessage("ERROR: Input error");
+            } catch (DisconnectException e) {
+                printMessage(e.what());
+                break;
+            } catch (ClientException e) {
+                printMessage(e.what());
             }
         }
     }
 
-    private String getInput() throws IOException {
+    private String getInput() throws ClientException {
         if (uir != null)
             System.out.print('>');
 
-        return uir.readLine();
+        try {
+            return uir.readLine();
+        } catch (IOException e) {
+            throw new ClientException("Error reading userinput.");
+        }
     }
 
     private void printMessage(String mes) {
