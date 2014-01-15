@@ -14,24 +14,24 @@ public class CommandHandler {
     public String HandleCommand(String inputLine, OutputStream sos) throws DisconnectException, ClientException {
         HashMap<String, String> requestArgs = new HashMap<String, String>();
 
-        String[] args = inputLine.split(inputLine);
+        String[] args = inputLine.split(" ");
 
         if(args[0].equals("DIR")) {
-            requestArgs.put("directory", args[2]);
+            requestArgs.put("directory", args[1]);
         }
         if(args[0].equals("DEL")) {
-            requestArgs.put("file_location", args[2]);
+            requestArgs.put("file_location", args[1]);
         }
         if(args[0].equals("REN")) {
-            requestArgs.put("file_location", args[2]);
-            requestArgs.put("new_file_location", args[3]);
+            requestArgs.put("file_location", args[1]);
+            requestArgs.put("new_file_location", args[2]);
         }
         if(args[0].equals("GET")) {
-            requestArgs.put("file_location", args[2]);
+            requestArgs.put("file_location", args[1]);
         }
         if(args[0].equals("PUT")) {
-            requestArgs.put("file_location", args[2]);
-            requestArgs.put("file_length", "" + fh.getFileSize(args[2]));
+            requestArgs.put("file_location", args[1]);
+            requestArgs.put("file_length", "" + fh.getFileSize(args[1]));
         }
         if(args[0].equals("SYNC")) {
             //TODO: Handle sync command
