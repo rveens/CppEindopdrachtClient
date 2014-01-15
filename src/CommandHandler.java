@@ -16,6 +16,8 @@ public class CommandHandler {
 
         String[] args = inputLine.split(" ");
 
+        requestArgs.put("command", args[0]);
+
         if(args[0].equals("DIR")) {
             requestArgs.put("directory", args[1]);
         }
