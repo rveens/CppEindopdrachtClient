@@ -51,4 +51,19 @@ public class FileHandler {
             throw new ClientException("Error while reading the file.");
         }
     }
+
+    public String readToOutput(InputStream sis, int fileSize) throws ClientException {
+        String returnVal = "";
+        try {
+            int buffSize = Math.min(Constants.BUFFER_SIZE, fileSize);
+            byte[] buffer = new byte[buffSize];
+
+            while (sis.read(buffer) != -1) {
+                returnVal += buffer;
+            }
+        } catch (IOException e) {
+            throw new ClientException("Error reading from socket.");
+        }
+        return returnVal;
+    }
 }
