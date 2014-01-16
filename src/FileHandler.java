@@ -55,11 +55,14 @@ public class FileHandler {
     public String readToOutput(InputStream sis, int fileSize) throws ClientException {
         String returnVal = "";
         try {
-            int buffSize = Math.min(Constants.BUFFER_SIZE, fileSize);
-            byte[] buffer = new byte[buffSize];
+            int remainingSize = fileSize;
+            while(remainingSize != 0) {
+                int buffSize = Math.min(Constants.BUFFER_SIZE, remainingSize);
+                byte[] buffer = new byte[buffSize];
 
-            while (sis.read(buffer) != -1) {
-                returnVal += buffer;
+                sis.read(buffer, 0, buffSize);
+                returnVal += new String(buffer, "UTF-8");
+                remainingSize -= buffSize;
             }
         } catch (IOException e) {
             throw new ClientException("Error reading from socket.");
