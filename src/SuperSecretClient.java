@@ -13,13 +13,13 @@ public class SuperSecretClient {
 
     private RequestHeaderGenerator rhg; // Maakt een header voor ons
     private CommandHandler ch;
-    private FileHandler fh;
+    private ResponseHandler rh;
 
     private BufferedReader uir;         // Voor het lezen van gebruiker input
 
     public SuperSecretClient() {
         ch = new CommandHandler();
-        fh = new FileHandler();
+        rh = new ResponseHandler();
 
         uir = new BufferedReader(new InputStreamReader(System.in));
     }
@@ -60,6 +60,7 @@ public class SuperSecretClient {
                 String inputLine = getInput();
 
                 String command = ch.HandleCommand(inputLine, sos);
+                rh.Handle(sis, command);
 
             } catch (DisconnectException e) {
                 printMessage(e.what());
