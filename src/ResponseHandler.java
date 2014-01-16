@@ -23,7 +23,7 @@ public class ResponseHandler {
             HashMap<String, String> response = rp.GetAttributes();
 
             if(command.equals("INFO")) {
-
+                System.out.println(response.get("INFO_MESG"));
             }
             if(command.equals("GET")) {
                 fh.saveFile(sis, response.get("file_location"), Integer.parseInt(response.get("file_length")));
