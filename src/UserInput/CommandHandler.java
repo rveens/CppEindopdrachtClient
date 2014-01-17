@@ -1,3 +1,9 @@
+package UserInput;
+
+import Exceptions.ClientException;
+import Exceptions.DisconnectException;
+import ResponseHandling.FileHandler;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;

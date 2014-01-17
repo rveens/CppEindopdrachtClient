@@ -1,3 +1,8 @@
+package ResponseHandling;
+
+import Exceptions.ClientException;
+import Main.Constants;
+
 import java.io.*;
 
 /**
@@ -46,7 +51,7 @@ public class FileHandler {
                 int buffSize = Math.min(Constants.BUFFER_SIZE, remainingSize);
                 byte[] buffer = new byte[buffSize];
 
-                sis.read(buffer);
+                sis.read(buffer, 0, buffSize);
                 fos.write(buffer);
 
                 remainingSize -= buffSize;
