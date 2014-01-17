@@ -1,5 +1,3 @@
-package ResponseHandling;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -43,7 +41,6 @@ public class ResponseParser {
         // pass String-array to checkAttributes
         String[] lines = tempList.toArray(new String[tempList.size()]);
         checkAttributes(lines);
-        br.close();
     }
 
     public String GetStatusCode() {

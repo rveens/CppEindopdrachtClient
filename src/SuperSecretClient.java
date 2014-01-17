@@ -1,13 +1,6 @@
-package Main;
-
-import Exceptions.ClientException;
-import Exceptions.DisconnectException;
-import ResponseHandling.ResponseHandler;
-import UserInput.CommandHandler;
-import UserInput.RequestHeaderGenerator;
-
 import java.io.*;
 import java.net.Socket;
+import java.util.HashMap;
 
 /**
  * Created by Rick Veens on 12/9/13.

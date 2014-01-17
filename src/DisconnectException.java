@@ -1,5 +1,3 @@
-package Exceptions;
-
 /**
  * Created by Reviara on 15-1-14.
  */

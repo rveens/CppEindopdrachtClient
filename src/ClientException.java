@@ -1,5 +1,3 @@
-package Exceptions;
-
 import com.sun.deploy.util.SessionState;
 
 /**
