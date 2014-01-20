@@ -1,7 +1,9 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+package ResponseHandling;
+
+import ConnectionHandling.ConnectionHandler;
+import ConnectionHandling.FileHandler;
+import Main.DisconnectException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -13,6 +15,8 @@ public class ResponseParser {
     private HashMap<String, String> attributes;
     private boolean inErrorState;
 
+    private ConnectionHandler ch;
+
     private final String[] possibleAttributes = {
         "error_mesg",
         "info_mesg",
@@ -20,22 +24,22 @@ public class ResponseParser {
         "file_location",
     };
 
-    public ResponseParser() {
+    public ResponseParser(ConnectionHandler ch) {
+        this.ch = ch;
         attributes = new HashMap<String, String>();
         inErrorState = false;
     }
 
 
-    public void ReadResponse(InputStream is) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
-
+    public void ReadResponse() throws DisconnectException
+    {
         // read first line
-        this.inErrorState = !checkFirstLine(br.readLine());
+        this.inErrorState = !checkFirstLine(ch.ReadLine());
 
         // read and put attribute-lines into an arrayList.
         ArrayList<String> tempList = new ArrayList<String>();
         String line = null;
-        while ( (line = br.readLine()) != null && (!line.equals("")) )
+        while ( (line = ch.ReadLine()) != null && (!line.equals("")) )
             tempList.add(line);
 
         // pass String-array to checkAttributes

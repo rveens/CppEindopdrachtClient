@@ -1,14 +1,24 @@
+package ConnectionHandling;
+
+import Main.ClientException;
+import Main.Constants;
+import Main.DisconnectException;
+
 import java.io.*;
+import java.net.Socket;
 
 /**
  * Created by Reviara on 15-1-14.
  */
 public class FileHandler {
-    public FileHandler() {
+    private ConnectionHandler ch;
 
+    public FileHandler(ConnectionHandler connHandler) {
+        this.ch = connHandler;
     }
 
     public long getFileSize(String fileName) throws ClientException {
+
         File file = new File(Constants.CLIENT_PATH, (fileName));
 
         if (!file.exists() || !file.isFile())
@@ -17,7 +27,7 @@ public class FileHandler {
         return file.length();
     }
 
-    public void sendFile(OutputStream sos, String fileName) throws ClientException {
+    public void sendFile(String fileName) throws ClientException {
         File file = new File(Constants.CLIENT_PATH, (fileName));
 
         if (!file.exists() || !file.isFile())
@@ -28,13 +38,13 @@ public class FileHandler {
             byte[] buffer = new byte[Constants.BUFFER_SIZE];
 
             while (fis.read(buffer) != -1)
-                sos.write(buffer);
+                ch.Write(buffer);
         } catch (IOException e) {
             throw new ClientException("Error while reading the file.");
         }
     }
 
-    public void saveFile(InputStream sis, String fileName, int fileSize) throws ClientException {
+    public void saveFile(String fileName, int fileSize) throws ClientException, DisconnectException {
         File file = new File(Constants.CLIENT_PATH + fileName);
         file.getParentFile().mkdirs();
 
@@ -46,7 +56,7 @@ public class FileHandler {
                 int buffSize = Math.min(Constants.BUFFER_SIZE, remainingSize);
                 byte[] buffer = new byte[buffSize];
 
-                sis.read(buffer);
+                buffer = ch.Read(buffer.length);
                 fos.write(buffer);
 
                 remainingSize -= buffSize;
@@ -56,7 +66,7 @@ public class FileHandler {
         }
     }
 
-    public String readToOutput(InputStream sis, int fileSize) throws ClientException {
+    public String readToOutput(int fileSize) throws ClientException, DisconnectException {
         String returnVal = "";
         try {
             int remainingSize = fileSize;
@@ -64,7 +74,7 @@ public class FileHandler {
                 int buffSize = Math.min(Constants.BUFFER_SIZE, remainingSize);
                 byte[] buffer = new byte[buffSize];
 
-                sis.read(buffer, 0, buffSize);
+                buffer = ch.Read(buffer.length);
                 returnVal += new String(buffer, "UTF-8");
                 remainingSize -= buffSize;
             }

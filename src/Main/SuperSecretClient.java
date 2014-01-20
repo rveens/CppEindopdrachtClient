@@ -1,3 +1,11 @@
+package Main;
+
+import ConnectionHandling.ConnectionHandler;
+import ConnectionHandling.FileHandler;
+import InputHandling.CommandHandler;
+import InputHandling.RequestHeaderGenerator;
+import ResponseHandling.ResponseHandler;
+
 import java.io.*;
 import java.net.Socket;
 import java.util.HashMap;
@@ -7,20 +15,9 @@ import java.util.HashMap;
  */
 public class SuperSecretClient {
 
-    private Socket s;                   // socket
-    private OutputStream sos;           // voor output naar socket
-    private InputStream sis;            // voor input van socket
-
-    private RequestHeaderGenerator rhg; // Maakt een header voor ons
-    private CommandHandler ch;
-    private ResponseHandler rh;
-
     private BufferedReader uir;         // Voor het lezen van gebruiker input
 
     public SuperSecretClient() {
-        ch = new CommandHandler();
-        rh = new ResponseHandler();
-
         uir = new BufferedReader(new InputStreamReader(System.in));
     }
 
@@ -35,12 +32,10 @@ public class SuperSecretClient {
                 int port = Integer.parseInt(temp);
 
                 //Create socket
-                s = new Socket(host, port);
-                sos = s.getOutputStream();
-                sis = s.getInputStream();
+                Socket s = new Socket(host, port);
 
                 //Handle this socket
-                Handle();
+                handle(s);
 
                 //Print close message and start all over
                 printMessage("Connection closed.");
@@ -54,19 +49,32 @@ public class SuperSecretClient {
         }
     }
 
-    private void Handle() {
+    private void handle(Socket s) {
         while(true) {
             try {
-                String inputLine = getInput();
+                // Lees gebruiker input
+                String userInputLine = getInput();
 
-                String command = ch.HandleCommand(inputLine, sos);
-                rh.Handle(sis, command);
+                // Maak connection handler aan die streams beheerd.
+                ConnectionHandler connHandler = new ConnectionHandler(s);
+                // Maak filehandler die bestanden lezen/schrijven afhandeld
+                FileHandler fh = new FileHandler(connHandler);
 
+                // Maak commandhandler aan die commando's van de input afhandeld.
+                CommandHandler commHandler = new CommandHandler(fh);
+
+                // CommandHandler gebruiker om user input af te handelen. Deze stuurt een bericht naar de server
+                String userCommand = commHandler.HandleCommand(userInputLine, connHandler);
+                // ResponseHandler handeld bericht van de server af.
+                ResponseHandler rh = new ResponseHandler(connHandler, fh);
+                rh.Handle(userCommand);
             } catch (DisconnectException e) {
                 printMessage(e.what());
                 break;
             } catch (ClientException e) {
                 printMessage(e.what());
+            } catch (NumberFormatException nfe) {
+                printMessage(nfe.getMessage());
             }
         }
     }

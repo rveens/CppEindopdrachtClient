@@ -1,3 +1,10 @@
+package InputHandling;
+
+import ConnectionHandling.ConnectionHandler;
+import ConnectionHandling.FileHandler;
+import Main.ClientException;
+import Main.DisconnectException;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
@@ -6,12 +13,12 @@ public class CommandHandler {
     private RequestHeaderGenerator rhg;
     private FileHandler fh;
 
-    public CommandHandler() {
+    public CommandHandler(FileHandler fh) throws DisconnectException {
         rhg = new RequestHeaderGenerator();
-        fh = new FileHandler();
+        this.fh = fh;
     }
 
-    public String HandleCommand(String inputLine, OutputStream sos) throws DisconnectException, ClientException {
+    public String HandleCommand(String inputLine, ConnectionHandler ch) throws DisconnectException, ClientException {
         HashMap<String, String> requestArgs = new HashMap<String, String>();
 
         String[] args = inputLine.split(" ");
@@ -40,13 +47,13 @@ public class CommandHandler {
         }
 
         try {
-            sos.write(rhg.GenerateRequestHeader(requestArgs).getBytes());
+            ch.Write(rhg.GenerateRequestHeader(requestArgs).getBytes());
         } catch (IOException e) {
             throw new DisconnectException("Socket closed unexpectedly.");
         }
 
         if(args[0].equals("PUT")) {
-            fh.sendFile(sos, args[1]);
+            fh.sendFile(args[1]);
         }
         if(args[0].equals("QUIT")) {
             throw new DisconnectException("Disconnected from server.");

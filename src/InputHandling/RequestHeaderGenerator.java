@@ -1,4 +1,7 @@
-import java.io.File;
+package InputHandling;
+
+import Main.Constants;
+
 import java.util.HashMap;
 import java.util.Set;
 
