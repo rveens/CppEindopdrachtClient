@@ -25,6 +25,7 @@ public class CommandHandler {
 
         requestArgs.put("command", args[0]);
 
+        // Maak en stuur een header, op basis van het usercommand. Dit command wordt ook gereturned.
         if(args[0].equals("DIR")) {
             requestArgs.put("directory", args[1]);
         }
@@ -44,6 +45,7 @@ public class CommandHandler {
         }
         if(args[0].equals("SYNC")) {
             //TODO: Handle sync command
+            // Stuur sync header naar de server
         }
 
         try {
@@ -52,12 +54,17 @@ public class CommandHandler {
             throw new DisconnectException("Socket closed unexpectedly.");
         }
 
+
+        // Moet de client een bestand sturen?
         if(args[0].equals("PUT")) {
             fh.sendFile(args[1]);
         }
         if(args[0].equals("QUIT")) {
             throw new DisconnectException("Disconnected from server.");
         }
+
+        // TODO sync file
+        // stuur sync directory naar de server. Als file.
 
         return args[0];
     }

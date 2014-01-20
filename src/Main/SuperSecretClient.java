@@ -85,6 +85,7 @@ public class SuperSecretClient {
 
         try {
             return uir.readLine();
+
         } catch (IOException e) {
             throw new ClientException("Error reading userinput.");
         }

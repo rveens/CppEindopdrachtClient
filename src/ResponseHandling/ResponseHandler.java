@@ -37,5 +37,13 @@ public class ResponseHandler {
             String dirList = fh.readToOutput(Integer.parseInt(response.get("file_length")));
             System.out.println(dirList);
         }
+        // TODO SYNC afhandelen.
+        /* Huidige staat van de server lezen:
+        * Hiermee:
+        *   Client bestanden vergelijken met de server bestanden
+        *       - Nieuwe bestanden sturen
+        *       - Nieuwere bestanden sturen
+        *   Gebruik PUT
+        */
     }
 }
