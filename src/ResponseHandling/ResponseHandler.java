@@ -2,12 +2,12 @@ package ResponseHandling;
 
 import ConnectionHandling.ConnectionHandler;
 import ConnectionHandling.FileHandler;
+import InputHandling.CommandHandler;
 import Main.ClientException;
 import Main.Constants;
 import Main.DisconnectException;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -17,10 +17,12 @@ import java.util.Scanner;
 public class ResponseHandler {
     private ResponseParser rp;
     private FileHandler fh;
+    private ConnectionHandler ch; // voor sync
 
     public ResponseHandler(ConnectionHandler ch, FileHandler fileHandler) {
         this.fh = fileHandler;
         this.rp = new ResponseParser(ch);
+        this.ch = ch;
     }
 
     public void Handle(String command) throws DisconnectException, ClientException {
@@ -54,8 +56,8 @@ public class ResponseHandler {
             Scanner s = new Scanner(dirList);
             s.nextLine(); // skip de eerste regel bij DIR.
 
-            HashMap<String, tempClientParseShittyJavaHasNoStruct>
-                    tempServerFiles = new HashMap<String, tempClientParseShittyJavaHasNoStruct>();
+            HashMap<String, ServerFileDataItem>
+                    tempServerFiles = new HashMap<String, ServerFileDataItem>();
 
             // voor elk bestand op de server...
             while (s.hasNext()) {
@@ -63,7 +65,7 @@ public class ResponseHandler {
                 String[] bestandAttributen = currentLine.split("\t");
 
                 // sla wat dingen op en stop ze in de map.
-                tempClientParseShittyJavaHasNoStruct item = new tempClientParseShittyJavaHasNoStruct();
+                ServerFileDataItem item = new ServerFileDataItem();
 
                 if (bestandAttributen[0] == "F")
                     item.isDirectory = false;
@@ -82,7 +84,7 @@ public class ResponseHandler {
     }
 
     public void iterateClientIfNewSendToServer(File currentFolder,
-                                               HashMap<String, tempClientParseShittyJavaHasNoStruct> tempServerFiles)
+                                               HashMap<String, ServerFileDataItem> tempServerFiles) throws DisconnectException, ClientException
     {
         if (currentFolder == null)
             return;
@@ -97,11 +99,26 @@ public class ResponseHandler {
             if (file.isDirectory()) {
                 iterateClientIfNewSendToServer(file, tempServerFiles);
             } else if (file.isFile()) {
+                String relative = new File(Constants.CLIENT_PATH).toURI().relativize(file.toURI()).getPath();
+                ServerFileDataItem item = null;
+                if ( (item = tempServerFiles.get(relative)) != null) {
+                    // bestand bestaat zowel op de server als op de client, is de client versie nieuwer?
+                    if (file.lastModified() > item.unixTimeStamp) {
+                        CommandHandler tcm = new CommandHandler(fh);
+                        String usercommand = tcm.HandleCommand("PUT " + relative, ch);
+                        this.Handle(usercommand);
+                    }
+                } else {
+                    // bestand bestaat niet op de server, altijd sturen
+                    CommandHandler tcm = new CommandHandler(fh);
+                    String usercommand = tcm.HandleCommand("PUT " + relative, ch);
+                    this.Handle(usercommand);
+                }
             }
         }
     }
 
-    private class tempClientParseShittyJavaHasNoStruct {
+    private class ServerFileDataItem {
         public boolean isDirectory = false;
         public String fileName = "";
         public long unixTimeStamp = -1;

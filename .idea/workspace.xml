@@ -4,18 +4,15 @@
     <list default="true" id="b5d4003a-8d9c-479a-be1b-9d193ac5e253" name="Default" comment="" />
     <ignored path="CPP2Client.iws" />
     <ignored path=".idea/workspace.xml" />
-<<<<<<< HEAD
-=======
     <file path="/Constants.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390215729348" ignored="false" />
-    <file path="/a.dummy" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390219194663" ignored="false" />
+    <file path="/a.dummy" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390304407512" ignored="false" />
     <file path="/SuperSecretClient.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390221849851" ignored="false" />
     <file path="/FileHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390217835535" ignored="false" />
     <file path="/ConnectionHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390218742564" ignored="false" />
-    <file path="/ResponseHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390221614433" ignored="false" />
+    <file path="/ResponseHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390304207602" ignored="false" />
     <file path="/ResponseParser.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390216898023" ignored="false" />
     <file path="/SocketHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390217677951" ignored="false" />
     <file path="/CommandHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390221472262" ignored="false" />
->>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +28,67 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" line="23" class="ResponseHandling.ResponseHandler" package="ResponseHandling">
+      <breakpoint url="file://$PROJECT_DIR$/src/InputHandling/CommandHandler.java" line="32" class="InputHandling.CommandHandler" package="InputHandling">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" line="41" class="ResponseHandling.ResponseHandler" package="ResponseHandling">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" line="112" class="ResponseHandling.ResponseHandler" package="ResponseHandling">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" line="105" class="ResponseHandling.ResponseHandler" package="ResponseHandling">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" line="101" class="ResponseHandling.ResponseHandler" package="ResponseHandling">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -93,40 +150,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CommandHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/InputHandling/CommandHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="0" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0" vertical-offset="637" max-vertical-offset="1564">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="697">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseParser.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="27" selection-start="621" selection-end="621" vertical-scroll-proportion="0.3798561" vertical-offset="76" max-vertical-offset="1887">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state line="6" column="61" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-=======
-            <state line="86" column="34" selection-start="2932" selection-end="2932" vertical-scroll-proportion="2.3446894">
+            <state line="13" column="44" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientException.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/ClientException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="13" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -135,27 +171,39 @@
       <file leaf-file-name="CommandHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/InputHandling/CommandHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="57" selection-start="2194" selection-end="2194" vertical-scroll-proportion="0.0">
+            <state line="59" column="32" selection-start="2045" selection-end="2045" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResponseHandler.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SuperSecretClient.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/SuperSecretClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="51" selection-start="2384" selection-end="2385" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResponseHandler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="10" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="101" column="0" selection-start="3693" selection-end="3693" vertical-scroll-proportion="0.33268103">
+              <folding>
+                <element signature="e#2012#2040#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResponseParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java">
+      <file leaf-file-name="FileHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ConnectionHandling/FileHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
->>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
-              <folding />
+            <state line="42" column="39" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -179,34 +227,21 @@
         <option value="$PROJECT_DIR$/src/Constants.java" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/ConnectionHandling/SocketHandler.java" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" />
-=======
         <option value="$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java" />
->>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
         <option value="$PROJECT_DIR$/src/ConnectionHandling/FileHandler.java" />
         <option value="$PROJECT_DIR$/src/ConnectionHandling/ConnectionHandler.java" />
-        <option value="$PROJECT_DIR$/src/InputHandling/CommandHandler.java" />
-        <option value="$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" />
         <option value="$PROJECT_DIR$/src/Main/SuperSecretClient.java" />
         <option value="$PROJECT_DIR$/src/InputHandling/CommandHandler.java" />
         <option value="$PROJECT_DIR$/src/Main/Constants.java" />
-        <option value="$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java" />
+        <option value="$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-<<<<<<< HEAD
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1552" />
-    <option name="height" value="853" />
-=======
     <option name="x" value="65" />
     <option name="y" value="24" />
     <option name="width" value="927" />
     <option name="height" value="1056" />
->>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -268,6 +303,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -379,7 +415,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -396,12 +431,12 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Unnamed">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -412,7 +447,6 @@
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -421,7 +455,6 @@
       <option name="NETWORK_SPEED" value="full" />
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -484,9 +517,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -495,7 +526,6 @@
       <option name="NETWORK_SPEED" value="full" />
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="false" name="Unnamed" type="Application" factoryName="Application">
@@ -575,53 +605,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-<<<<<<< HEAD
-    <frame x="-8" y="-8" width="1552" height="853" extended-state="7" />
-=======
     <frame x="65" y="24" width="927" height="1056" extended-state="4" />
->>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36061028" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-=======
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32819384" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38436124" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
->>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37114537" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32870865" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32819384" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32819384" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-=======
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33902162" sideWeight="0.6156388" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32230523" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33902162" sideWeight="0.62885463" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34251103" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
->>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15643564" sideWeight="0.638207" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33148405" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32819384" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
@@ -635,9 +645,58 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
-      <TodoPanelSettings />
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
     </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -647,134 +706,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/InputHandling/CommandHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="36" selection-start="1994" selection-end="1994" vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="1479">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InputHandling/CommandHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="30" selection-start="1785" selection-end="1785" vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1377">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/Main/ClientException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/SuperSecretClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="13" selection-start="2750" selection-end="2750" vertical-scroll-proportion="0.0" vertical-offset="1309" max-vertical-offset="1581">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="5" selection-start="27" selection-end="27" vertical-scroll-proportion="0.024630541" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-=======
->>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
-    <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="73" selection-end="73" vertical-scroll-proportion="0.15625" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ConnectionHandling/ConnectionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.44672132" vertical-offset="0" max-vertical-offset="0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ConnectionHandling/FileHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="53" selection-start="315" selection-end="315" vertical-scroll-proportion="0.45901638" vertical-offset="0" max-vertical-offset="0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/DisconnectException.java">
-<<<<<<< HEAD
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="32" selection-start="70" selection-end="89" vertical-scroll-proportion="0.13812155" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InputHandling/RequestHeaderGenerator.java">
-=======
->>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="9" selection-start="760" selection-end="760" vertical-scroll-proportion="0.7128713" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/SuperSecretClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="61" selection-start="3030" selection-end="3030" vertical-scroll-proportion="1.9568346" vertical-offset="0" max-vertical-offset="1632">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/ClientException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="112" selection-end="112" vertical-scroll-proportion="0.17122301" vertical-offset="0" max-vertical-offset="695">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InputHandling/CommandHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0" vertical-offset="535" max-vertical-offset="1564">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="61" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java">
-<<<<<<< HEAD
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="27" selection-start="621" selection-end="621" vertical-scroll-proportion="0.3798561" vertical-offset="76" max-vertical-offset="1887">
-=======
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="46" column="10" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2012#2040#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -785,18 +722,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="10" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.0">
+        <state line="36" column="0" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="5" selection-start="27" selection-end="27" vertical-scroll-proportion="0.024630541" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="73" selection-end="73" vertical-scroll-proportion="0.15625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConnectionHandling/ConnectionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="0" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.44672132">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/DisconnectException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="32" selection-start="70" selection-end="89" vertical-scroll-proportion="0.13812155">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InputHandling/RequestHeaderGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="760" selection-end="760" vertical-scroll-proportion="0.7128713">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="59" selection-start="942" selection-end="942" vertical-scroll-proportion="0.9">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="44" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/SuperSecretClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="34" selection-start="2932" selection-end="2932" vertical-scroll-proportion="2.3446894">
->>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
+        <state line="68" column="51" selection-start="2384" selection-end="2385" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/ClientException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InputHandling/CommandHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="32" selection-start="2045" selection-end="2045" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConnectionHandling/FileHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="39" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="0" selection-start="3693" selection-end="3693" vertical-scroll-proportion="0.33268103">
+          <folding>
+            <element signature="e#2012#2040#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
