@@ -47,7 +47,6 @@ public class CommandHandler {
             requestArgs.put("file_length", "" + fh.getFileSize(args[1]));
         }
         if(args[0].equals("SYNC")) {
-<<<<<<< HEAD
             dirList = "D/F\tlocation\ttime";
             File dir;
             if(args[1].equals("/")) {
@@ -70,10 +69,6 @@ public class CommandHandler {
             requestArgs.put("client_directory", args[1]);
             requestArgs.put("server_directory", args[2]);
             requestArgs.put("file_length", "" + dirList.length());
-=======
-            //TODO: Handle sync command
-            // Stuur sync header naar de server
->>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
         }
 
         try {
