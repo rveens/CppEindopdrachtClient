@@ -3,8 +3,10 @@ package InputHandling;
 import ConnectionHandling.ConnectionHandler;
 import ConnectionHandling.FileHandler;
 import Main.ClientException;
+import Main.Constants;
 import Main.DisconnectException;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
@@ -12,6 +14,7 @@ import java.util.HashMap;
 public class CommandHandler {
     private RequestHeaderGenerator rhg;
     private FileHandler fh;
+    private String dirList;
 
     public CommandHandler(FileHandler fh) throws DisconnectException {
         rhg = new RequestHeaderGenerator();
@@ -26,7 +29,7 @@ public class CommandHandler {
         requestArgs.put("command", args[0]);
 
         if(args[0].equals("DIR")) {
-            requestArgs.put("directory", args[1]);
+            requestArgs.put("server_directory", args[1]);
         }
         if(args[0].equals("DEL")) {
             requestArgs.put("file_location", args[1]);
@@ -43,7 +46,28 @@ public class CommandHandler {
             requestArgs.put("file_length", "" + fh.getFileSize(args[1]));
         }
         if(args[0].equals("SYNC")) {
-            //TODO: Handle sync command
+            dirList = "D/F\tlocation\ttime";
+            File dir;
+            if(args[1].equals("/")) {
+                dir = new File(Constants.CLIENT_PATH);
+            } else {
+                dir = new File(Constants.CLIENT_PATH + args[1]);
+            }
+            File[] files = dir.listFiles();
+            for (File file : files) {
+                dirList += "\n";
+                if(file.isDirectory())
+                    dirList +=  "D";
+                else
+                    dirList += "F";
+                dirList += "\t";
+                dirList += file.getPath();
+                dirList += "\t";
+                dirList += file.lastModified();
+            }
+            requestArgs.put("client_directory", args[1]);
+            requestArgs.put("server_directory", args[2]);
+            requestArgs.put("file_length", "" + dirList.length());
         }
 
         try {
@@ -57,6 +81,13 @@ public class CommandHandler {
         }
         if(args[0].equals("QUIT")) {
             throw new DisconnectException("Disconnected from server.");
+        }
+        if(args[0].equals("SYNC")) {
+            try {
+                ch.Write(dirList.getBytes());
+            } catch (IOException e) {
+                throw new DisconnectException("Socket closed unexpectedly.");
+            }
         }
 
         return args[0];

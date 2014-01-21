@@ -84,7 +84,10 @@ public class SuperSecretClient {
             System.out.print('>');
 
         try {
-            return uir.readLine();
+            String line = uir.readLine();
+            if(line == null)
+                System.exit(0); //String should never be null
+            return line;
         } catch (IOException e) {
             throw new ClientException("Error reading userinput.");
         }
