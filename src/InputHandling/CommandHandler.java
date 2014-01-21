@@ -28,6 +28,7 @@ public class CommandHandler {
 
         requestArgs.put("command", args[0]);
 
+        // Maak en stuur een header, op basis van het usercommand. Dit command wordt ook gereturned.
         if(args[0].equals("DIR")) {
             requestArgs.put("server_directory", args[1]);
         }
@@ -46,6 +47,7 @@ public class CommandHandler {
             requestArgs.put("file_length", "" + fh.getFileSize(args[1]));
         }
         if(args[0].equals("SYNC")) {
+<<<<<<< HEAD
             dirList = "D/F\tlocation\ttime";
             File dir;
             if(args[1].equals("/")) {
@@ -68,6 +70,10 @@ public class CommandHandler {
             requestArgs.put("client_directory", args[1]);
             requestArgs.put("server_directory", args[2]);
             requestArgs.put("file_length", "" + dirList.length());
+=======
+            //TODO: Handle sync command
+            // Stuur sync header naar de server
+>>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
         }
 
         try {
@@ -76,6 +82,8 @@ public class CommandHandler {
             throw new DisconnectException("Socket closed unexpectedly.");
         }
 
+
+        // Moet de client een bestand sturen?
         if(args[0].equals("PUT")) {
             fh.sendFile(args[1]);
         }
@@ -89,6 +97,9 @@ public class CommandHandler {
                 throw new DisconnectException("Socket closed unexpectedly.");
             }
         }
+
+        // TODO sync file
+        // stuur sync directory naar de server. Als file.
 
         return args[0];
     }

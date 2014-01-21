@@ -84,10 +84,15 @@ public class SuperSecretClient {
             System.out.print('>');
 
         try {
+<<<<<<< HEAD
             String line = uir.readLine();
             if(line == null)
                 System.exit(0); //String should never be null
             return line;
+=======
+            return uir.readLine();
+
+>>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
         } catch (IOException e) {
             throw new ClientException("Error reading userinput.");
         }

@@ -4,6 +4,18 @@
     <list default="true" id="b5d4003a-8d9c-479a-be1b-9d193ac5e253" name="Default" comment="" />
     <ignored path="CPP2Client.iws" />
     <ignored path=".idea/workspace.xml" />
+<<<<<<< HEAD
+=======
+    <file path="/Constants.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390215729348" ignored="false" />
+    <file path="/a.dummy" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390219194663" ignored="false" />
+    <file path="/SuperSecretClient.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390221849851" ignored="false" />
+    <file path="/FileHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390217835535" ignored="false" />
+    <file path="/ConnectionHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390218742564" ignored="false" />
+    <file path="/ResponseHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390221614433" ignored="false" />
+    <file path="/ResponseParser.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390216898023" ignored="false" />
+    <file path="/SocketHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390217677951" ignored="false" />
+    <file path="/CommandHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390221472262" ignored="false" />
+>>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +123,38 @@
       <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="6" column="61" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+=======
+            <state line="86" column="34" selection-start="2932" selection-end="2932" vertical-scroll-proportion="2.3446894">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/InputHandling/CommandHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="57" selection-start="2194" selection-end="2194" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResponseHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="10" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResponseParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="0" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
+>>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
               <folding />
             </state>
           </provider>
@@ -136,9 +179,15 @@
         <option value="$PROJECT_DIR$/src/Constants.java" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/ConnectionHandling/SocketHandler.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" />
+=======
+        <option value="$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java" />
+>>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
         <option value="$PROJECT_DIR$/src/ConnectionHandling/FileHandler.java" />
         <option value="$PROJECT_DIR$/src/ConnectionHandling/ConnectionHandler.java" />
+        <option value="$PROJECT_DIR$/src/InputHandling/CommandHandler.java" />
+        <option value="$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" />
         <option value="$PROJECT_DIR$/src/Main/SuperSecretClient.java" />
         <option value="$PROJECT_DIR$/src/InputHandling/CommandHandler.java" />
         <option value="$PROJECT_DIR$/src/Main/Constants.java" />
@@ -147,10 +196,17 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1552" />
     <option name="height" value="853" />
+=======
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="927" />
+    <option name="height" value="1056" />
+>>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -519,20 +575,40 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1552" height="853" extended-state="7" />
+=======
+    <frame x="65" y="24" width="927" height="1056" extended-state="4" />
+>>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36061028" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32819384" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38436124" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+>>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32870865" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33902162" sideWeight="0.6156388" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32230523" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+>>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15643564" sideWeight="0.638207" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33148405" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -585,6 +661,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Main/ClientException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="13" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="408">
@@ -611,6 +688,8 @@
         <state line="1" column="5" selection-start="27" selection-end="27" vertical-scroll-proportion="0.024630541" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
+=======
+>>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
     <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="13" selection-start="73" selection-end="73" vertical-scroll-proportion="0.15625" vertical-offset="0" max-vertical-offset="0">
@@ -637,6 +716,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/DisconnectException.java">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="32" selection-start="70" selection-end="89" vertical-scroll-proportion="0.13812155" vertical-offset="0" max-vertical-offset="0">
           <folding />
@@ -644,6 +724,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/InputHandling/RequestHeaderGenerator.java">
+=======
+>>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="9" selection-start="760" selection-end="760" vertical-scroll-proportion="0.7128713" vertical-offset="0" max-vertical-offset="0">
           <folding />
@@ -686,8 +768,34 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="27" selection-start="621" selection-end="621" vertical-scroll-proportion="0.3798561" vertical-offset="76" max-vertical-offset="1887">
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InputHandling/CommandHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="57" selection-start="2194" selection-end="2194" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="10" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/SuperSecretClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="34" selection-start="2932" selection-end="2932" vertical-scroll-proportion="2.3446894">
+>>>>>>> b3a31d1610f3a3dd97b21033e0fafa492fae5622
           <folding />
         </state>
       </provider>
