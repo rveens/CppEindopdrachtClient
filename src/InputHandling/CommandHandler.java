@@ -62,7 +62,7 @@ public class CommandHandler {
                 else
                     dirList += "F";
                 dirList += "\t";
-                dirList += file.getPath();
+                dirList += new File(Constants.CLIENT_PATH).toURI().relativize(file.toURI()).getPath();
                 dirList += "\t";
                 dirList += file.lastModified();
             }
