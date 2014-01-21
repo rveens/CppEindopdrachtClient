@@ -30,23 +30,36 @@ public class CommandHandler {
 
         // Maak en stuur een header, op basis van het usercommand. Dit command wordt ook gereturned.
         if(args[0].equals("DIR")) {
+            if (args.length != 2)
+                throw new ClientException("DIR <path>");
             requestArgs.put("server_directory", args[1]);
         }
         if(args[0].equals("DEL")) {
+            if (args.length != 2)
+                throw new ClientException("DEL <path>");
             requestArgs.put("file_location", args[1]);
         }
         if(args[0].equals("REN")) {
+            if (args.length != 3)
+                throw new ClientException("REN <path> <path>");
             requestArgs.put("file_location", args[1]);
             requestArgs.put("new_file_location", args[2]);
         }
         if(args[0].equals("GET")) {
+            if (args.length != 2)
+                throw new ClientException("GET <path>");
             requestArgs.put("file_location", args[1]);
         }
         if(args[0].equals("PUT")) {
+            if (args.length != 2)
+                throw new ClientException("PUT <path>");
             requestArgs.put("file_location", args[1]);
             requestArgs.put("file_length", "" + fh.getFileSize(args[1]));
         }
         if(args[0].equals("SYNC")) {
+            if (args.length != 3)
+                throw new ClientException("SYNC <path> <path>");
+
             dirList = "D/F\tlocation\ttime";
             File dir;
             if(args[1].equals("/")) {
