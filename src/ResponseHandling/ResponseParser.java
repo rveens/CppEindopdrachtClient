@@ -14,6 +14,7 @@ import java.util.HashMap;
 public class ResponseParser {
     private String statusCode;
     private HashMap<String, String> attributes;
+    private boolean receivedErrorResponse = false;
 
     private ConnectionHandler ch;
 
@@ -56,6 +57,10 @@ public class ResponseParser {
         return attributes;
     }
 
+    public boolean GetReceivedErrorResponse() {
+        return this.receivedErrorResponse;
+    }
+
     private boolean checkFirstLine(String firstLine) {
         /* check for nullpointer */
         if (firstLine == null)
@@ -71,6 +76,9 @@ public class ResponseParser {
 
         if (!words[1].equals("OK") && !words[1].equals("ERROR"))
             return false;
+
+        if (words[1].equals("ERROR"))
+            receivedErrorResponse = true;
 
         this.statusCode = words[1];
 

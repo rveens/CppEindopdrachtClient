@@ -26,10 +26,14 @@ public class ResponseHandler {
     }
 
     public void Handle(String command) throws DisconnectException, ClientException {
+        // read the response first
         rp.ReadResponse();
-
         HashMap<String, String> response = rp.GetAttributes();
+        if (rp.GetReceivedErrorResponse())
+            throw new ClientException("Received ERROR from server: " + response.get("error_mesg"));
 
+
+        // action after a server response (which might be reading more bytes):
         if(command.equals("INFO")) {
             System.out.println(response.get("info_mesg"));
         }
