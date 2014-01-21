@@ -27,8 +27,6 @@ public class ResponseHandler {
 
     public void Handle(String command) throws DisconnectException, ClientException {
         rp.ReadResponse();
-        if (rp.GetInErrorState())
-            throw new ClientException("Received invalid response from server.");
 
         HashMap<String, String> response = rp.GetAttributes();
 

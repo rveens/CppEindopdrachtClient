@@ -34,29 +34,29 @@ public class CommandHandler {
                 throw new ClientException("DIR <path>");
             requestArgs.put("server_directory", args[1]);
         }
-        if(args[0].equals("DEL")) {
+        else if(args[0].equals("DEL")) {
             if (args.length != 2)
                 throw new ClientException("DEL <path>");
             requestArgs.put("file_location", args[1]);
         }
-        if(args[0].equals("REN")) {
+        else if(args[0].equals("REN")) {
             if (args.length != 3)
                 throw new ClientException("REN <path> <path>");
             requestArgs.put("file_location", args[1]);
             requestArgs.put("new_file_location", args[2]);
         }
-        if(args[0].equals("GET")) {
+        else if(args[0].equals("GET")) {
             if (args.length != 2)
                 throw new ClientException("GET <path>");
             requestArgs.put("file_location", args[1]);
         }
-        if(args[0].equals("PUT")) {
+        else if(args[0].equals("PUT")) {
             if (args.length != 2)
                 throw new ClientException("PUT <path>");
             requestArgs.put("file_location", args[1]);
             requestArgs.put("file_length", "" + fh.getFileSize(args[1]));
         }
-        if(args[0].equals("SYNC")) {
+        else if(args[0].equals("SYNC")) {
             if (args.length != 3)
                 throw new ClientException("SYNC <path> <path>");
 
@@ -83,6 +83,13 @@ public class CommandHandler {
             requestArgs.put("server_directory", args[2]);
             requestArgs.put("file_length", "" + dirList.length());
         }
+        else if (args[0].equals("QUIT"))
+            ; // QUIT heeft geen argumenten
+        else if (args[0].equals("INFO"))
+            ; // INFO heeft geen argumenten
+        else {
+            throw new ClientException("Unknown Command");
+        }
 
         try {
             ch.Write(rhg.GenerateRequestHeader(requestArgs).getBytes());
@@ -105,9 +112,6 @@ public class CommandHandler {
                 throw new DisconnectException("Socket closed unexpectedly.");
             }
         }
-
-        // TODO sync file
-        // stuur sync directory naar de server. Als file.
 
         return args[0];
     }

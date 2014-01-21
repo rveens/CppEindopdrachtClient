@@ -10,9 +10,9 @@
     <file path="/FileHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390217835535" ignored="false" />
     <file path="/ConnectionHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390218742564" ignored="false" />
     <file path="/ResponseHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390304207602" ignored="false" />
-    <file path="/ResponseParser.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390216898023" ignored="false" />
+    <file path="/ResponseParser.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390315543443" ignored="false" />
     <file path="/SocketHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390217677951" ignored="false" />
-    <file path="/CommandHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390314965091" ignored="false" />
+    <file path="/CommandHandler.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390315960915" ignored="false" />
     <file path="/Main.java" changelist="b5d4003a-8d9c-479a-be1b-9d193ac5e253" time="1390305520808" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +44,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" line="41" class="ResponseHandling.ResponseHandler" package="ResponseHandling">
+      <breakpoint url="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" line="39" class="ResponseHandling.ResponseHandler" package="ResponseHandling">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -184,19 +184,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandHandler.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CommandHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/InputHandling/CommandHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="12" selection-start="2212" selection-end="2212" vertical-scroll-proportion="0.6635688">
+            <state line="13" column="9" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SuperSecretClient.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SuperSecretClient.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main/SuperSecretClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="51" selection-start="2384" selection-end="2385" vertical-scroll-proportion="0.0">
+            <state line="68" column="51" selection-start="2384" selection-end="2384" vertical-scroll-proportion="0.88847584">
               <folding />
             </state>
           </provider>
@@ -205,7 +205,7 @@
       <file leaf-file-name="ResponseParser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="16" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0">
+            <state line="60" column="30" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -214,9 +214,9 @@
       <file leaf-file-name="ResponseHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="26" selection-start="777" selection-end="777" vertical-scroll-proportion="-6.0">
+            <state line="53" column="45" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#2012#2040#0" expanded="true" />
+                <element signature="e#1897#1925#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -260,13 +260,13 @@
         <option value="$PROJECT_DIR$/src/Constants.java" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/ConnectionHandling/SocketHandler.java" />
-        <option value="$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java" />
         <option value="$PROJECT_DIR$/src/ConnectionHandling/FileHandler.java" />
         <option value="$PROJECT_DIR$/src/ConnectionHandling/ConnectionHandler.java" />
         <option value="$PROJECT_DIR$/src/Main/SuperSecretClient.java" />
         <option value="$PROJECT_DIR$/src/Main/Constants.java" />
-        <option value="$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" />
         <option value="$PROJECT_DIR$/src/Main/Main.java" />
+        <option value="$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java" />
+        <option value="$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java" />
         <option value="$PROJECT_DIR$/src/InputHandling/CommandHandler.java" />
       </list>
     </option>
@@ -744,7 +744,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="10" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#2012#2040#0" expanded="true" />
+            <element signature="e#1897#1925#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -821,29 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="16" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="26" selection-start="777" selection-end="777" vertical-scroll-proportion="-6.0">
-          <folding>
-            <element signature="e#2012#2040#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/SuperSecretClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="51" selection-start="2384" selection-end="2385" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/ClientException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="13" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0">
@@ -853,7 +830,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/InputHandling/CommandHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="12" selection-start="2212" selection-end="2212" vertical-scroll-proportion="0.6635688">
+        <state line="13" column="9" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="45" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1897#1925#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResponseHandling/ResponseParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="30" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/SuperSecretClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="51" selection-start="2384" selection-end="2384" vertical-scroll-proportion="0.88847584">
           <folding />
         </state>
       </provider>

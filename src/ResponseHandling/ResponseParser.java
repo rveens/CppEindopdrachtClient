@@ -2,6 +2,7 @@ package ResponseHandling;
 
 import ConnectionHandling.ConnectionHandler;
 import ConnectionHandling.FileHandler;
+import Main.ClientException;
 import Main.DisconnectException;
 
 import java.util.ArrayList;
@@ -13,7 +14,6 @@ import java.util.HashMap;
 public class ResponseParser {
     private String statusCode;
     private HashMap<String, String> attributes;
-    private boolean inErrorState;
 
     private ConnectionHandler ch;
 
@@ -29,14 +29,13 @@ public class ResponseParser {
     public ResponseParser(ConnectionHandler ch) {
         this.ch = ch;
         attributes = new HashMap<String, String>();
-        inErrorState = false;
     }
 
 
-    public void ReadResponse() throws DisconnectException
-    {
+    public void ReadResponse() throws DisconnectException, ClientException {
         // read first line
-        this.inErrorState = !checkFirstLine(ch.ReadLine());
+        if (!checkFirstLine(ch.ReadLine()))
+            throw new ClientException("First line of header is invalid. ");
 
         // read and put attribute-lines into an arrayList.
         ArrayList<String> tempList = new ArrayList<String>();
@@ -56,11 +55,6 @@ public class ResponseParser {
     public HashMap<String, String> GetAttributes() {
         return attributes;
     }
-
-    public boolean GetInErrorState() {
-        return inErrorState;
-    }
-
 
     private boolean checkFirstLine(String firstLine) {
         /* check for nullpointer */
@@ -83,7 +77,7 @@ public class ResponseParser {
         return true;
     }
 
-    private boolean checkAttributes(String[] lines) {
+    private boolean checkAttributes(String[] lines) throws ClientException {
         for (String line : lines) {
             String[] words = line.split(": ");
             if (words.length == 0)
@@ -91,6 +85,8 @@ public class ResponseParser {
 
             if (checkIfAttributeNameExists(words[0]))
                 this.attributes.put(words[0], words[1]);
+            else
+                throw new ClientException("Unknown Attribute Name");
         }
 
         return !this.attributes.isEmpty();
