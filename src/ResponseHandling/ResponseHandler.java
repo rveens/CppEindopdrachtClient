@@ -38,7 +38,7 @@ public class ResponseHandler {
             System.out.println(response.get("info_mesg"));
         }
         if(command.equals("GET")) {
-            fh.saveFile(response.get("file_location"), Integer.parseInt(response.get("file_length")));
+            fh.saveFile(response.get("file_location"), Integer.parseInt(response.get("file_length")), Integer.parseInt(response.get("modified_time")));
         }
         if(command.equals("DIR")) {
             String dirList = fh.readToOutput(Integer.parseInt(response.get("file_length")));
@@ -105,7 +105,10 @@ public class ResponseHandler {
                 ServerFileDataItem item = null;
                 if ( (item = tempServerFiles.get(relative)) != null) {
                     // bestand bestaat zowel op de server als op de client, is de client versie nieuwer?
-                    if (file.lastModified() > item.unixTimeStamp) {
+
+                    long lastModified = file.lastModified();
+                    lastModified /= 1000;
+                    if ( lastModified != item.unixTimeStamp) {
                         CommandHandler tcm = new CommandHandler(fh);
                         String usercommand = tcm.HandleCommand("PUT " + relative, ch);
                         this.Handle(usercommand);

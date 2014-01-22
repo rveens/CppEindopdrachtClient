@@ -55,6 +55,7 @@ public class CommandHandler {
                 throw new ClientException("PUT <path>");
             requestArgs.put("file_location", args[1]);
             requestArgs.put("file_length", "" + fh.getFileSize(args[1]));
+            requestArgs.put("modified_time", "" + fh.getFileLastModified(args[1]));
         }
         else if(args[0].equals("SYNC")) {
             if (args.length != 3)

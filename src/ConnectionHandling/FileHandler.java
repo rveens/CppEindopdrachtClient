@@ -27,6 +27,15 @@ public class FileHandler {
         return file.length();
     }
 
+    public long getFileLastModified(String fileName) throws ClientException {
+        File file = new File(Constants.CLIENT_PATH, (fileName));
+
+        if (!file.exists() || !file.isFile())
+            throw new ClientException("Cannot find the file specified.");
+
+        return file.lastModified() / 1000;
+    }
+
     public void sendFile(String fileName) throws ClientException, DisconnectException {
         File file = new File(Constants.CLIENT_PATH, (fileName));
 
@@ -49,7 +58,7 @@ public class FileHandler {
         }
     }
 
-    public void saveFile(String fileName, int fileSize) throws ClientException, DisconnectException {
+    public void saveFile(String fileName, int fileSize, int lastModifiedTime) throws ClientException, DisconnectException {
         File file = new File(Constants.CLIENT_PATH + fileName);
         file.getParentFile().mkdirs();
 
@@ -62,12 +71,15 @@ public class FileHandler {
                 byte[] buffer = new byte[buffSize];
 
                 buffer = ch.Read(buffer.length);
+                if (buffer == null)
+                    throw new DisconnectException("Socket was closed when trying to write to file.");
                 fos.write(buffer);
 
                 remainingSize -= buffSize;
             }
+            file.setLastModified(lastModifiedTime);
         } catch (IOException e) {
-            throw new ClientException("Error while saving the file.");
+            throw new DisconnectException("Error while saving the file.");
         }
     }
 
@@ -80,11 +92,13 @@ public class FileHandler {
                 byte[] buffer = new byte[buffSize];
 
                 buffer = ch.Read(buffer.length);
+                if (buffer == null)
+                    throw new DisconnectException("Socket was closed when trying to write to output.");
                 returnVal += new String(buffer, "UTF-8");
                 remainingSize -= buffSize;
             }
         } catch (IOException e) {
-            throw new ClientException("Error reading from socket.");
+            throw new DisconnectException("Error reading from socket.");
         }
         return returnVal;
     }

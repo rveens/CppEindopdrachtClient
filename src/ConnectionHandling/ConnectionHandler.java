@@ -36,7 +36,7 @@ public class ConnectionHandler {
         byte[] buffer = new byte[bytesToRead];
 
         if (sis.read(buffer, 0, bytesToRead) == -1)
-            throw new DisconnectException("Stream is blijkbaar gesloten.");
+            return null;
 
         return buffer;
     }
