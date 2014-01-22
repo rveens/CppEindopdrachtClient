@@ -58,7 +58,7 @@ public class CommandHandler {
         }
         else if(args[0].equals("SYNC")) {
             if (args.length != 3)
-                throw new ClientException("SYNC <path> <path>");
+                throw new ClientException("SYNC <clientpath> <serverpath>");
 
             dirList = "D/F\tlocation\ttime";
             File dir;
@@ -83,11 +83,13 @@ public class CommandHandler {
             requestArgs.put("server_directory", args[2]);
             requestArgs.put("file_length", "" + dirList.length());
         }
-        else if (args[0].equals("QUIT"))
-            ; // QUIT heeft geen argumenten
-        else if (args[0].equals("INFO"))
-            ; // INFO heeft geen argumenten
-        else {
+        else if (args[0].equals("QUIT")) {
+            if (args.length != 1) // QUIT heeft geen argumenten
+                throw new ClientException("QUIT: unknown arguments");
+        } else if (args[0].equals("INFO")) {
+            if (args.length != 1) // // INFO heeft geen argumenten
+                throw new ClientException("INFO: unknown arguments");
+        } else {
             throw new ClientException("Unknown Command");
         }
 
