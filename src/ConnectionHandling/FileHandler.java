@@ -27,20 +27,25 @@ public class FileHandler {
         return file.length();
     }
 
-    public void sendFile(String fileName) throws ClientException {
+    public void sendFile(String fileName) throws ClientException, DisconnectException {
         File file = new File(Constants.CLIENT_PATH, (fileName));
 
         if (!file.exists() || !file.isFile())
             throw new ClientException("Cannot find the file specified.");
 
         try {
+            int remainingSize = (int) file.length();
             FileInputStream fis = new FileInputStream(file);
-            byte[] buffer = new byte[Constants.BUFFER_SIZE];
-
-            while (fis.read(buffer) != -1)
+            while (remainingSize != 0) {
+                int buffSize = Math.min(Constants.BUFFER_SIZE, remainingSize);
+                byte[] buffer = new byte[buffSize];
+                fis.read(buffer);
                 ch.Write(buffer);
+
+                remainingSize -= buffSize;
+            }
         } catch (IOException e) {
-            throw new ClientException("Error while reading the file.");
+            throw new DisconnectException("Error while sending the file.");
         }
     }
 
@@ -50,9 +55,9 @@ public class FileHandler {
 
         try {
             int remainingSize = fileSize;
+            FileOutputStream fos = new FileOutputStream(file);
             while(remainingSize != 0)
             {
-                FileOutputStream fos = new FileOutputStream(file);
                 int buffSize = Math.min(Constants.BUFFER_SIZE, remainingSize);
                 byte[] buffer = new byte[buffSize];
 
