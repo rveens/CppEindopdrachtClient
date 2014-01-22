@@ -53,6 +53,7 @@ public class FileHandler {
 
                 remainingSize -= buffSize;
             }
+            fis.close();
         } catch (IOException e) {
             throw new DisconnectException("Error while sending the file.");
         }
@@ -77,6 +78,7 @@ public class FileHandler {
 
                 remainingSize -= buffSize;
             }
+            fos.close();
             file.setLastModified(lastModifiedTime);
         } catch (IOException e) {
             throw new DisconnectException("Error while saving the file.");
