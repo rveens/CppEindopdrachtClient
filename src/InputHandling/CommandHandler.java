@@ -32,7 +32,7 @@ public class CommandHandler {
         if(args[0].equals("DIR")) {
             if (args.length != 2)
                 throw new ClientException("DIR <path>");
-            requestArgs.put("server_directory", args[1]);
+            requestArgs.put("server_folder", args[1]);
         }
         else if(args[0].equals("DEL")) {
             if (args.length != 2)
@@ -83,8 +83,8 @@ public class CommandHandler {
                 dirList += "\t";
                 dirList += file.lastModified();
             }
-            requestArgs.put("client_directory", args[1]);
-            requestArgs.put("server_directory", args[2]);
+            requestArgs.put("client_folder", args[1]);
+            requestArgs.put("server_folder", args[2]);
             requestArgs.put("file_length", "" + dirList.length());
         }
         else if (args[0].equals("QUIT")) {

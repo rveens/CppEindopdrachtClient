@@ -23,8 +23,9 @@ public class ResponseParser {
         "info_mesg",
         "file_length",
         "file_location",
-        "client_directory",
-        "server_directory",
+        "client_folder",
+        "server_folder",
+        "modified_time",
     };
 
     public ResponseParser(ConnectionHandler ch) {

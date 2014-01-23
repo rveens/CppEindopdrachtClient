@@ -81,16 +81,15 @@ public class ResponseHandler {
             }
 
             // voor elk bestand op de client, test of deze op de server staat of nieuwer is, zo ja, stuur zo over met PUT.
-            iterateClientIfNewSendToServer(response.get("client_folder"), response.get("server_folder"), tempServerFiles);
+            File file = new File(combine(Constants.CLIENT_PATH, response.get("client_folder")));
+            iterateClientIfNewSendToServer(file, response.get("client_folder"), response.get("server_folder"), tempServerFiles);
         }
     }
 
-    public void iterateClientIfNewSendToServer(String clientFolder, String serverFolder,
+    public void iterateClientIfNewSendToServer(File currentFolder, String clientFolder, String serverFolder,
                                                 HashMap<String, ServerFileDataItem> tempServerFiles)
                                                 throws DisconnectException, ClientException
     {
-        File currentFolder = new File(combine(Constants.CLIENT_PATH, clientFolder));
-
         if (currentFolder == null)
             return;
 
@@ -101,22 +100,24 @@ public class ResponseHandler {
             // display test
             //System.out.println((file.isDirectory() ? "D " : "F ") + file.getName() + " " + file.lastModified());
 
+            String relative = new File(combine(Constants.CLIENT_PATH, clientFolder)).toURI().relativize(file.toURI()).getPath();
+
+            String finalClientPath, finalServerPath;
+            if(clientFolder.equals("/"))
+                finalClientPath = relative;
+            else
+                finalClientPath = clientFolder + relative;
+
+            if(serverFolder.equals("/"))
+                finalServerPath = relative;
+            else
+                finalServerPath = serverFolder + relative;
+
             if (file.isDirectory()) {
-                iterateClientIfNewSendToServer(clientFolder, serverFolder, tempServerFiles);
+                iterateClientIfNewSendToServer(file, clientFolder, serverFolder, tempServerFiles);
             } else if (file.isFile()) {
-                String relative = new File(combine(Constants.CLIENT_PATH, clientFolder)).toURI().relativize(file.toURI()).getPath();
                 ServerFileDataItem item = null;
 
-                String finalClientPath, finalServerPath;
-                if(clientFolder.equals("/"))
-                    finalClientPath = relative;
-                else
-                    finalClientPath = clientFolder + relative;
-
-                if(serverFolder.equals("/"))
-                    finalServerPath = relative;
-                else
-                    finalServerPath = serverFolder + relative;
                 if ( (item = tempServerFiles.get(relative)) != null) {
                     // bestand bestaat zowel op de server als op de client, is de client versie nieuwer?
 
