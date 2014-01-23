@@ -51,9 +51,12 @@ public class CommandHandler {
             requestArgs.put("file_location", args[1]);
         }
         else if(args[0].equals("PUT")) {
-            if (args.length != 2)
-                throw new ClientException("PUT <path>");
-            requestArgs.put("file_location", args[1]);
+            if (args.length > 3 && args.length < 2)
+                throw new ClientException("PUT <location> [serverlocation]");
+            if (args.length == 3)
+                requestArgs.put("file_location", args[2]);
+            else if (args.length == 2)
+                requestArgs.put("file_location", args[1]);
             requestArgs.put("file_length", "" + fh.getFileSize(args[1]));
             requestArgs.put("modified_time", "" + fh.getFileLastModified(args[1]));
         }
