@@ -81,13 +81,16 @@ public class ResponseHandler {
             }
 
             // voor elk bestand op de client, test of deze op de server staat of nieuwer is, zo ja, stuur zo over met PUT.
-            iterateClientIfNewSendToServer(new File(Constants.CLIENT_PATH), tempServerFiles);
+            iterateClientIfNewSendToServer(response.get("client_folder"), response.get("server_folder"), tempServerFiles);
         }
     }
 
-    public void iterateClientIfNewSendToServer(File currentFolder,
-                                               HashMap<String, ServerFileDataItem> tempServerFiles) throws DisconnectException, ClientException
+    public void iterateClientIfNewSendToServer(String clientFolder, String serverFolder,
+                                                HashMap<String, ServerFileDataItem> tempServerFiles)
+                                                throws DisconnectException, ClientException
     {
+        File currentFolder = new File(combine(Constants.CLIENT_PATH, clientFolder));
+
         if (currentFolder == null)
             return;
 
@@ -99,10 +102,21 @@ public class ResponseHandler {
             //System.out.println((file.isDirectory() ? "D " : "F ") + file.getName() + " " + file.lastModified());
 
             if (file.isDirectory()) {
-                iterateClientIfNewSendToServer(file, tempServerFiles);
+                iterateClientIfNewSendToServer(clientFolder, serverFolder, tempServerFiles);
             } else if (file.isFile()) {
-                String relative = new File(Constants.CLIENT_PATH).toURI().relativize(file.toURI()).getPath();
+                String relative = new File(combine(Constants.CLIENT_PATH, clientFolder)).toURI().relativize(file.toURI()).getPath();
                 ServerFileDataItem item = null;
+
+                String finalClientPath, finalServerPath;
+                if(clientFolder.equals("/"))
+                    finalClientPath = relative;
+                else
+                    finalClientPath = clientFolder + relative;
+
+                if(serverFolder.equals("/"))
+                    finalServerPath = relative;
+                else
+                    finalServerPath = serverFolder + relative;
                 if ( (item = tempServerFiles.get(relative)) != null) {
                     // bestand bestaat zowel op de server als op de client, is de client versie nieuwer?
 
@@ -110,17 +124,23 @@ public class ResponseHandler {
                     lastModified /= 1000;
                     if ( lastModified != item.unixTimeStamp) {
                         CommandHandler tcm = new CommandHandler(fh);
-                        String usercommand = tcm.HandleCommand("PUT " + relative, ch);
+                        String usercommand = tcm.HandleCommand("PUT " + finalClientPath + " " + finalServerPath, ch);
                         this.Handle(usercommand);
                     }
                 } else {
                     // bestand bestaat niet op de server, altijd sturen
                     CommandHandler tcm = new CommandHandler(fh);
-                    String usercommand = tcm.HandleCommand("PUT " + relative, ch);
+                    String usercommand = tcm.HandleCommand("PUT " + finalClientPath + " " + finalServerPath, ch);
                     this.Handle(usercommand);
                 }
             }
         }
+    }
+    public static String combine (String path1, String path2)
+    {
+        File file1 = new File(path1);
+        File file2 = new File(file1, path2);
+        return file2.getPath();
     }
 
     private class ServerFileDataItem {
